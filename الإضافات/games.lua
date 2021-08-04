@@ -7,19 +7,19 @@ if msg.type ~= "pv" then
 if MsgText[1] == "تفعيل" and MsgText[2] == "الالعاب" or MsgText[2] == "اللعبه" or MsgText[2] == "اللعبة" then
 if not msg.Admin then return "📛*│* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 if not redis:get(max..'lock_geams'..msg.chat_id_) then 
-return "🙋🏼‍♂️*╿* أهلا عزيزي "..msg.TheRankCmd.."\n📡*╽* الالعاب بالتاكيد تم تفعيلها\n✓" 
+return "*╿* أهلا عزيزي "..msg.TheRankCmd.."\n📡*╽* الالعاب بالتاكيد تم تفعيلها\n✓" 
 else 
 redis:del(max..'lock_geams'..msg.chat_id_) 
-return "🙋🏼‍♂️*╿* أهلا عزيزي "..msg.TheRankCmd.."\n📡*╽* تم تفعيل الالعاب \n✓" 
+return "*╿* أهلا عزيزي "..msg.TheRankCmd.."\n📡*╽* تم تفعيل الالعاب \n✓" 
 end 
 end
 if MsgText[1] == "تعطيل" and MsgText[2] == "الالعاب" or MsgText[2] == "اللعبه" or MsgText[2] == "اللعبة" then
 if not msg.Admin then return "📛*│* هذا الامر يخص {الادمن,المدير,المنشئ,المطور} فقط  \n🚶" end
 if redis:get(max..'lock_geams'..msg.chat_id_) then 
-return "🙋🏼‍♂️*╿* أهلا عزيزي "..msg.TheRankCmd.."\n📡*╽* الالعاب بالتأكيد معطله\n✓" 
+return "*╿* أهلا عزيزي "..msg.TheRankCmd.."\n📡*╽* الالعاب بالتأكيد معطله\n✓" 
 else
 redis:set(max..'lock_geams'..msg.chat_id_,true)  
-return "🙋🏼‍♂️*╿* أهلا عزيزي "..msg.TheRankCmd.."\n📡*╽* تم تعطيل الالعاب\n✓" 
+return "*╿* أهلا عزيزي "..msg.TheRankCmd.."\n📡*╽* تم تعطيل الالعاب\n✓" 
 end   
 end
 if MsgText[1] == "اضف رسائل" and msg.reply_to_message_id_ == 0 then       
